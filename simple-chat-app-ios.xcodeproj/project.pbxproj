@@ -20,6 +20,7 @@
 		2C7E59B2249A24E30025B43C /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B1249A24E30025B43C /* InputContainerView.swift */; };
 		2C7E59B4249A27BC0025B43C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B3249A27BC0025B43C /* CustomTextField.swift */; };
 		2C7E59B6249A60E90025B43C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B5249A60E90025B43C /* LoginViewModel.swift */; };
+		2C7E59B8249A7C700025B43C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B7249A7C700025B43C /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		2C7E59B1249A24E30025B43C /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		2C7E59B3249A27BC0025B43C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		2C7E59B5249A60E90025B43C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2C7E59B7249A7C700025B43C /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,7 @@
 		2C7E59A52498956E0025B43C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2C7E59B5249A60E90025B43C /* LoginViewModel.swift */,
+				2C7E59B9249A7C750025B43C /* Authentication */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -140,6 +142,15 @@
 			children = (
 				2C7E59AB2499E0D70025B43C /* LoginController.swift */,
 				2C7E59AD2499E0E60025B43C /* RegistrationController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		2C7E59B9249A7C750025B43C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				2C7E59B5249A60E90025B43C /* LoginViewModel.swift */,
+				2C7E59B7249A7C700025B43C /* RegistrationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -216,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7E5993249895530025B43C /* ViewController.swift in Sources */,
+				2C7E59B8249A7C700025B43C /* RegistrationViewModel.swift in Sources */,
 				2C7E59B2249A24E30025B43C /* InputContainerView.swift in Sources */,
 				2C7E598F249895530025B43C /* AppDelegate.swift in Sources */,
 				2C7E59A9249895C10025B43C /* ConversationsController.swift in Sources */,

@@ -12,6 +12,8 @@ class RegistrationController: UIViewController {
     
     // MARK: - Properties
     
+    private var viewModel = RegistrationViewModel()
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         let config = UIImage.SymbolConfiguration(pointSize: 200, weight: .ultraLight, scale: .large)
@@ -52,6 +54,7 @@ class RegistrationController: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0.8442266583, green: 0.493614614, blue: 0.6640961766, alpha: 1)
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
+        button.isEnabled = false
         return button
     }()
     
@@ -75,9 +78,24 @@ class RegistrationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Selectors
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            viewModel.password = sender.text
+        } else if sender == fullnameTextField {
+            viewModel.fullname = sender.text
+        } else {
+            viewModel.username = sender.text
+        }
+        
+        checkFormStatus()
+    }
     
     @objc func handleSelectPhoto() {
         let imagePickerController = UIImagePickerController()
@@ -90,6 +108,7 @@ class RegistrationController: UIViewController {
     }
     
     // MARK: - Helpers
+    
     func configureUI() {
         configureGradientLayer()
         
@@ -115,6 +134,13 @@ class RegistrationController: UIViewController {
                                      right: view.rightAnchor, paddingLeft: 32, paddingBottom: 16, paddingRight: 32)
     }
     
+    func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
 }
 
 // MARK: - UIImagePickerControllerDelegate
@@ -127,5 +153,17 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
         plusPhotoButton.layer.borderWidth = 3.0
         plusPhotoButton.layer.cornerRadius = 200 / 2
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension RegistrationController: AuthenticationControllerProtocol {
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        } else {
+            signUpButton.isEnabled = false
+            signUpButton.backgroundColor = #colorLiteral(red: 0.8442266583, green: 0.493614614, blue: 0.6640961766, alpha: 1)
+        }
     }
 }
