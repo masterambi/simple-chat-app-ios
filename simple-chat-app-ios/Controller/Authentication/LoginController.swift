@@ -16,6 +16,7 @@ class LoginController: UIViewController {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "bubble.right")
         iv.tintColor = .white
+        iv.contentMode = .scaleAspectFit
         return iv
     }()
     
@@ -83,7 +84,7 @@ class LoginController: UIViewController {
         view.addSubview(iconImage)
         iconImage.centerX(inView: view)
         iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
-        iconImage.setDimensions(height: 120, width: 135)
+        iconImage.setDimensions(height: 120, width: 120)
         
         let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
         stack.axis = .vertical
@@ -96,14 +97,6 @@ class LoginController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,
                                      right: view.rightAnchor, paddingLeft: 32, paddingBottom: 16, paddingRight: 32)
-    }
-    
-    func configureGradientLayer() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
     }
     
 }
