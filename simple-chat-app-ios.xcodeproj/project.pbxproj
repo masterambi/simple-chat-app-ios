@@ -14,6 +14,11 @@
 		2C7E5998249895570025B43C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7E5997249895570025B43C /* Assets.xcassets */; };
 		2C7E599B249895570025B43C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7E5999249895570025B43C /* LaunchScreen.storyboard */; };
 		2C7E59A9249895C10025B43C /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59A8249895C10025B43C /* ConversationsController.swift */; };
+		2C7E59AC2499E0D70025B43C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59AB2499E0D70025B43C /* LoginController.swift */; };
+		2C7E59AE2499E0E60025B43C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59AD2499E0E60025B43C /* RegistrationController.swift */; };
+		2C7E59B02499EB9F0025B43C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59AF2499EB9F0025B43C /* Extensions.swift */; };
+		2C7E59B2249A24E30025B43C /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B1249A24E30025B43C /* InputContainerView.swift */; };
+		2C7E59B4249A27BC0025B43C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B3249A27BC0025B43C /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		2C7E599A249895570025B43C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C7E599C249895570025B43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C7E59A8249895C10025B43C /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		2C7E59AB2499E0D70025B43C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		2C7E59AD2499E0E60025B43C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		2C7E59AF2499EB9F0025B43C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2C7E59B1249A24E30025B43C /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		2C7E59B3249A27BC0025B43C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,7 @@
 		2C7E59A2249895610025B43C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2C7E59AF2499EB9F0025B43C /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -92,6 +103,7 @@
 		2C7E59A42498956D0025B43C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2C7E59AA2499E0B50025B43C /* Authentication */,
 				2C7E59A8249895C10025B43C /* ConversationsController.swift */,
 			);
 			path = Controller;
@@ -107,6 +119,8 @@
 		2C7E59A6249895700025B43C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C7E59B1249A24E30025B43C /* InputContainerView.swift */,
+				2C7E59B3249A27BC0025B43C /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +130,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2C7E59AA2499E0B50025B43C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				2C7E59AB2499E0D70025B43C /* LoginController.swift */,
+				2C7E59AD2499E0E60025B43C /* RegistrationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7E5993249895530025B43C /* ViewController.swift in Sources */,
+				2C7E59B2249A24E30025B43C /* InputContainerView.swift in Sources */,
 				2C7E598F249895530025B43C /* AppDelegate.swift in Sources */,
 				2C7E59A9249895C10025B43C /* ConversationsController.swift in Sources */,
 				2C7E5991249895530025B43C /* SceneDelegate.swift in Sources */,
+				2C7E59AE2499E0E60025B43C /* RegistrationController.swift in Sources */,
+				2C7E59AC2499E0D70025B43C /* LoginController.swift in Sources */,
+				2C7E59B02499EB9F0025B43C /* Extensions.swift in Sources */,
+				2C7E59B4249A27BC0025B43C /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
