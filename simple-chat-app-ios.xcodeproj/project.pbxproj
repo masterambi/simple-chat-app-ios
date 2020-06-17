@@ -19,6 +19,7 @@
 		2C7E59B02499EB9F0025B43C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59AF2499EB9F0025B43C /* Extensions.swift */; };
 		2C7E59B2249A24E30025B43C /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B1249A24E30025B43C /* InputContainerView.swift */; };
 		2C7E59B4249A27BC0025B43C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B3249A27BC0025B43C /* CustomTextField.swift */; };
+		2C7E59B6249A60E90025B43C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59B5249A60E90025B43C /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2C7E59AF2499EB9F0025B43C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2C7E59B1249A24E30025B43C /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		2C7E59B3249A27BC0025B43C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		2C7E59B5249A60E90025B43C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		2C7E59A52498956E0025B43C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2C7E59B5249A60E90025B43C /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				2C7E59AE2499E0E60025B43C /* RegistrationController.swift in Sources */,
 				2C7E59AC2499E0D70025B43C /* LoginController.swift in Sources */,
 				2C7E59B02499EB9F0025B43C /* Extensions.swift in Sources */,
+				2C7E59B6249A60E90025B43C /* LoginViewModel.swift in Sources */,
 				2C7E59B4249A27BC0025B43C /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
