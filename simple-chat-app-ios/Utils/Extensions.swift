@@ -85,13 +85,19 @@ extension UIViewController {
     
     static let hud = JGProgressHUD(style: .dark)
     
-    func configureGradientLayer() {
+    func configureGradientLayer(withView containerView: UIView? = nil) {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
         gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
+        if let containerView = containerView {
+            containerView.layer.addSublayer(gradient)
+            gradient.frame = containerView.frame
+        } else {
+            view.layer.addSublayer(gradient)
+            gradient.frame = view.frame
+        }
     }
+    
     
     func showLoader(_ show: Bool, withText text: String? = "Loading") {
         view.endEditing(true)

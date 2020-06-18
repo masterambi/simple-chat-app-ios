@@ -13,6 +13,26 @@ class RegistrationController: UIViewController {
     
     // MARK: - Properties
     
+    lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 200)
+    
+    lazy var scrollView: UIScrollView = {
+        let view = UIScrollView(frame: .zero)
+        view.backgroundColor = .white
+        view.frame = self.view.bounds
+        view.contentSize = contentViewSize
+        view.autoresizingMask = .flexibleHeight
+        view.contentInsetAdjustmentBehavior = .never
+        view.bounces = false
+        return view
+    }()
+    
+    lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.frame.size = contentViewSize
+        return view
+    }()
+    
     private var viewModel = RegistrationViewModel()
     
     private var profileImage: UIImage?
@@ -136,25 +156,23 @@ class RegistrationController: UIViewController {
     }
     
     @objc func keyboardWillShow() {
-        if view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= 88
-        }
+        scrollView.contentOffset = CGPoint(x: 0, y: 200)
     }
     
     @objc func keyboardWillHide() {
-        if view.frame.origin.y != 0 {
-            view.frame.origin.y = 0
-        }
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
     // MARK: - Helpers
     
     func configureUI() {
-        configureGradientLayer()
+        view.addSubview(scrollView)
+        scrollView.addSubview(containerView)
+        configureGradientLayer(withView: containerView)
         
-        view.addSubview(plusPhotoButton)
-        plusPhotoButton.centerX(inView: view)
-        plusPhotoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        containerView.addSubview(plusPhotoButton)
+        plusPhotoButton.centerX(inView: containerView)
+        plusPhotoButton.anchor(top: containerView.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         plusPhotoButton.setDimensions(height: 200, width: 200)
         
         let stack = UIStackView(arrangedSubviews: [emailContainerView,
@@ -164,11 +182,11 @@ class RegistrationController: UIViewController {
                                                    signUpButton])
         stack.axis = .vertical
         stack.spacing = 16
-        
-        view.addSubview(stack)
-        stack.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+
+        containerView.addSubview(stack)
+        stack.anchor(top: plusPhotoButton.bottomAnchor, left: containerView.leftAnchor, right: containerView.rightAnchor,
                      paddingTop: 32, paddingLeft: 32, paddingRight: 32)
-        
+
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,
                                      right: view.rightAnchor, paddingLeft: 32, paddingBottom: 16, paddingRight: 32)
