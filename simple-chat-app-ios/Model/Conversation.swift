@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  Conversation.swift
 //  simple-chat-app-ios
 //
 //  Created by Ramzy Rashaun Arief on 21/06/20.
@@ -8,5 +8,7 @@
 
 import Firebase
 
-let COLLECTION_MESSAGES = Firestore.firestore().collection("messages")
-let COLLECTION_USERS = Firestore.firestore().collection("users")
+struct Conversation {
+    let user: User
+    let message: Message
+}
