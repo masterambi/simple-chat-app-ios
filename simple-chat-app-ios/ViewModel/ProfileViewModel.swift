@@ -10,7 +10,6 @@ import Foundation
 
 enum ProfileViewModel: Int, CaseIterable {
     case accountInfo
-    
     case settings
     
     var description: String {
