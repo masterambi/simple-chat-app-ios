@@ -8,9 +8,19 @@
 
 import UIKit
 
+protocol ProfileHeaderDelegate: class {
+    func dismissController()
+}
+
 class ProfileHeader: UIView {
     
     // MARK: - Properties
+    
+    var user: User? {
+        didSet { populateUserData() }
+    }
+    
+    weak var delegate: ProfileHeaderDelegate?
     
     private let dismissButton: UIButton = {
         let button = UIButton(type: .system)
@@ -25,6 +35,7 @@ class ProfileHeader: UIView {
         let iv = UIImageView()
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFill
+        iv.backgroundColor = .lightGray
         iv.layer.borderColor = UIColor.white.cgColor
         iv.layer.borderWidth = 4.0
         return iv
@@ -35,7 +46,6 @@ class ProfileHeader: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "Misaka Mikoto"
         return label
     }()
     
@@ -44,7 +54,6 @@ class ProfileHeader: UIView {
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
-        label.text = "@misaka"
         return label
     }()
     
@@ -62,10 +71,20 @@ class ProfileHeader: UIView {
     // MARK: - Selectors
     
     @objc func handleDismissal() {
-        
+        delegate?.dismissController()
     }
     
     // MARK: - Hepers
+    
+    func populateUserData() {
+        guard let user = user else { return }
+        
+        fullnameLabel.text = user.fullname
+        usernameLabel.text = "@" + user.username
+        
+        guard let url = URL(string: user.profileImageUrl) else { return }
+        profileImageView.sd_setImage(with: url)
+    }
     
     func confiureUI() {
         configureGradientLayer()
@@ -99,3 +118,4 @@ class ProfileHeader: UIView {
     }
     
 }
+
