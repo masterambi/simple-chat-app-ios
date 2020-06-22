@@ -38,6 +38,8 @@
 		2C7E59D7249FB8150025B43C /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59D6249FB8150025B43C /* ConversationViewModel.swift */; };
 		2C7E59D924A07D430025B43C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59D824A07D430025B43C /* ProfileController.swift */; };
 		2C7E59DB24A07EAE0025B43C /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59DA24A07EAE0025B43C /* ProfileHeader.swift */; };
+		2C7E59DD24A098C90025B43C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59DC24A098C90025B43C /* ProfileViewModel.swift */; };
+		2C7E59DF24A099C20025B43C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E59DE24A099C20025B43C /* ProfileCell.swift */; };
 		BA80282D3C1D293AFEF2045B /* Pods_simple_chat_app_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1296AF462ACA363D31619D5 /* Pods_simple_chat_app_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		2C7E59D6249FB8150025B43C /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		2C7E59D824A07D430025B43C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		2C7E59DA24A07EAE0025B43C /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		2C7E59DC24A098C90025B43C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		2C7E59DE24A099C20025B43C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		C1296AF462ACA363D31619D5 /* Pods_simple_chat_app_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_chat_app_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFFCBAC04409D71BD18CF53 /* Pods-simple-chat-app-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-chat-app-ios.debug.xcconfig"; path = "Target Support Files/Pods-simple-chat-app-ios/Pods-simple-chat-app-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		EE26993EFA87CEEA489C7D1A /* Pods-simple-chat-app-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-chat-app-ios.release.xcconfig"; path = "Target Support Files/Pods-simple-chat-app-ios/Pods-simple-chat-app-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				2C7E59B9249A7C750025B43C /* Authentication */,
 				2C7E59CE249E33410025B43C /* MessageViewModel.swift */,
 				2C7E59D6249FB8150025B43C /* ConversationViewModel.swift */,
+				2C7E59DC24A098C90025B43C /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				2C7E59CA249E294F0025B43C /* MessageCell.swift */,
 				2C7E59D4249FB2B10025B43C /* ConversationCell.swift */,
 				2C7E59DA24A07EAE0025B43C /* ProfileHeader.swift */,
+				2C7E59DE24A099C20025B43C /* ProfileCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				2C7E59B8249A7C700025B43C /* RegistrationViewModel.swift in Sources */,
 				2C7E59B2249A24E30025B43C /* InputContainerView.swift in Sources */,
 				2C7E59D924A07D430025B43C /* ProfileController.swift in Sources */,
+				2C7E59DD24A098C90025B43C /* ProfileViewModel.swift in Sources */,
 				2C7E59D7249FB8150025B43C /* ConversationViewModel.swift in Sources */,
 				2C7E59BD249B7FDF0025B43C /* AuthService.swift in Sources */,
 				2C7E59CF249E33410025B43C /* MessageViewModel.swift in Sources */,
@@ -372,6 +379,7 @@
 				2C7E59CD249E302A0025B43C /* Message.swift in Sources */,
 				2C7E59BF249C801F0025B43C /* NewMessageController.swift in Sources */,
 				2C7E59C9249E137C0025B43C /* CustomInputAccessoryView.swift in Sources */,
+				2C7E59DF24A099C20025B43C /* ProfileCell.swift in Sources */,
 				2C7E59DB24A07EAE0025B43C /* ProfileHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
