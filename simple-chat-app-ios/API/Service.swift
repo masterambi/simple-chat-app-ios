@@ -11,13 +11,13 @@ import Firebase
 struct Service {
     
     static func fetchUsers(completion: @escaping([User]) -> Void) {
-        var users = [User]()
         COLLECTION_USERS.getDocuments { (snapshot, error) in
-            snapshot?.documents.forEach({ document in
-                let dictionary = document.data()
-                let user = User(dictionary: dictionary)
-                users.append(user)
-            })
+            guard var users = snapshot?.documents.map({ User(dictionary: $0.data()) }) else { return }
+            
+            if let currentUserIndex = users.firstIndex(where: { $0.uid == Auth.auth().currentUser?.uid }) {
+                users.remove(at: currentUserIndex)
+            }
+            
             completion(users)
         }
     }
