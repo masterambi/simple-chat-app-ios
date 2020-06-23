@@ -62,9 +62,9 @@ struct Service {
                 if change.type == .added {
                     let dictionary = change.document.data()
                     messages.append(Message(dictionary: dictionary))
-                    completion(messages)
                 }
             })
+            completion(messages)
         }
     }
     
