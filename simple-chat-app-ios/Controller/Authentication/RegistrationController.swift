@@ -13,6 +13,10 @@ class RegistrationController: UIViewController {
     
     // MARK: - Properties
     
+    private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage?
+    weak var delegate: AuthenticationDelegate?
+    
     lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 200)
     
     lazy var scrollView: UIScrollView = {
@@ -32,10 +36,6 @@ class RegistrationController: UIViewController {
         view.frame.size = contentViewSize
         return view
     }()
-    
-    private var viewModel = RegistrationViewModel()
-    
-    private var profileImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -127,7 +127,7 @@ class RegistrationController: UIViewController {
                 return
             }
             self.showLoader(false)
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.authenticationComplete()
         }
     }
     
