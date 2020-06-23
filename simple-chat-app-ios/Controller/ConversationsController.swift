@@ -64,14 +64,15 @@ class ConversationsController: UIViewController {
     // MARK: - API
     
     func fetchConversations() {
+        showLoader(true)
         Service.fetchConversations { conversations in
-            
             conversations.forEach{ conversation in
                 let message = conversation.message
                 self.conversationsDictionary[message.chatPartnerId] = conversation
             }
             
             self.conversations = Array(self.conversationsDictionary.values).sorted { $0.message.timestamp.dateValue() > $1.message.timestamp.dateValue() }
+            self.showLoader(false)
             self.tableView.reloadData()
         }
     }
